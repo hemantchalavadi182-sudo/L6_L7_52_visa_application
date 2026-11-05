@@ -1,16 +1,53 @@
-# L6_L7_52 — Visa Application
+# Lab 7: Fuzz Testing
 
-Lab 7: Fuzz Testing
+## Objective
 
-## About
+* Understand fuzz testing.
+* Generate automatic test inputs using Hypothesis.
+* Identify unexpected inputs and edge cases.
+* Validate application functions using property-based testing.
 
-A small Python module that parses visa applications, averages processing times and works out the payable fee after a discount.
+## Project Description
 
-## Files
+The Visa Application system contains three main functions:
 
-| File | Description |
-|------|-------------|
-| `visa_application.py` | The code under test |
-| `test_visa_application.py` | Starter test file |
+1. parse_application() – Parses visa type and entry information.
+2. processing_average() – Calculates average processing days.
+3. payable_fee() – Calculates payable fees after tax and discount.
 
-Refer to the lab handout for instructions.
+## Tools Used
+
+* Python 3.12
+* Pytest
+* Hypothesis
+
+## Testing Approach
+
+Hypothesis generates multiple random inputs to test application behaviour.
+
+Testing includes:
+
+* Valid inputs
+* Invalid inputs
+* Empty inputs
+* Negative values
+* Unexpected characters
+* Boundary conditions
+* Random numerical values
+
+## Test Execution
+
+Run:
+
+`pytest -v`
+
+Run with Hypothesis statistics:
+
+`pytest -v --hypothesis-show-statistics`
+
+## Conclusion
+
+Fuzz testing was implemented using Hypothesis and Pytest.
+
+The application functions were tested with automatically generated inputs and additional edge cases to identify unexpected behaviour and improve input validation.
+
